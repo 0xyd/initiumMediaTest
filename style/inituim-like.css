@@ -1,0 +1,146 @@
+* { box-sizing: border-box;  }
+body { margin: 0px; }
+
+html, body, #CONTAINER, article, 
+#VIZLAYER, #VIZLAYER > svg, body > svg 
+{ width: 100%; height: 100%; }
+
+#CONTAINER > svg, #VIZLAYER > svg { padding: 0px 20px 0px 60px; }
+
+#INFO_LAYER { 
+	background-color: #fff;
+	opacity: 0.7;
+	position: fixed; 
+	top: 0px; 
+	left: 70px; 
+	width: 30%; 
+}
+
+#INFO_LAYER:hover { opacity: 1; }
+
+g.x-axis text, g.y-axis text { transform-origin: left top; }
+g.x-axis text { transform: rotateZ(30deg) translate(20px, 0px); }
+g.x-axis g.tick { display: none; }
+g.x-axis g.tick:nth-child(3n) { display: inline-block; } 
+g.y-axis g.tick text { transform: translate(5px, 10px); } 
+		
+.ver-helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#Indicators { 
+	position: fixed; 
+	top: 100px;
+	right: 20px; 
+	height: 100%; 
+	width: 30px
+}
+
+.indicator { 
+	height: 30px; 
+	text-align: center;
+}
+
+.cite { vertical-align: super; }
+.indicator .button  { 
+	display: inline-block;
+	height: 14px;
+	width : 14px;
+	border: 1px solid #ccc; 
+	border-radius: 7px;
+
+}
+.indicator .button.active {
+	background-color: #333;
+}
+
+#Next { cursor: pointer; }
+
+#Next .bar {
+	display: inline-block;
+	background-color: #444;
+	width: 10px;
+	height: 2px;
+}
+
+#Next .bar:first-child {
+	transform-origin: top left;
+	transform: rotate(40deg) translateX(5px);
+}
+
+#Next .bar:last-child {
+	transform-origin: top right;
+	transform: rotate(-40deg) translateX(-5px);
+}
+
+#Illustrator { 
+	position: fixed; 
+	bottom: 50px;
+	right:  100px;
+}
+
+#Illustrator .ullist .item {
+	display: inline-block;
+	list-style: none;
+	text-indent: 10px;
+}
+
+#Illustrator .ullist .item > .icn {
+	height: 30px;
+	width:  30px;
+}
+
+#Illustrator .ullist .item > .txt { text-indent: 10px;  }
+
+#Illustrator .ullist .item > .icn rect {
+	top  : 5px;
+	width: 30px;
+	height: 10px;
+	y: 10px;
+}
+
+#Illustrator .ullist .item > .icn ,#Illustrator .ullist .item > span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#ItemSelector {
+	position: fixed;
+	top:   20px;
+	right: 30px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+#SVGTip {
+	position: fixed;
+}
